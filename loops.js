@@ -85,7 +85,7 @@ let height = 5;
 // outer loop for rows
 for (let row = 1; row <= height; row++) {
     let s = "";
-    
+
     // inner loop1 for spaces
     for (let space = height - row; space > 0; space--) {
         s += "  ";
@@ -93,7 +93,7 @@ for (let row = 1; row <= height; row++) {
     // inner loop2 for stars
     let pattern = "";
     for (let star = 1; star <= row; star++) {
-        pattern += "* ";
+        pattern += " *";
     }
     console.log(s + pattern);
 }
