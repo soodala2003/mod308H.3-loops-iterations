@@ -1,14 +1,14 @@
 // Part 2: Practocal Exercises
 // 1. Multiplication Table with For Loop
 console.log("1. Multiplication Table with For Loop");
-let del = ", ";
 
-for (let num = 1; num <= 10; num++) {
-    let products = "";
-    for (let i = 1; i <= 10; i++) {
-        products += num * i + del;
+for (let i = 1; i <= 10; i++) {
+    let results = "";
+    for (let j = 1; j <= 10; j++) {
+        let products = String(i * j);
+        results += " ".repeat(4 - products.length) + products;
     }  
-    console.log(products);
+    console.log(results);
 } 
 
 // 2. Sum of Odd and Even Numbers with While Loop
