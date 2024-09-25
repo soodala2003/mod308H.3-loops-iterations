@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ALAB 308.3.1 - Practical Loops</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h3>Part 1: Loop Concepts Overview</h3>
+        <ul><li>for loop: A for loop repeats until a specified condition evaluates to false.<br>
+            <pre>
+    Syntax: for (initialization; condition; afterthought) {
+                //statements;
+            }
+            
+    Ex.:    for (let i = o; i < 10; i++) {
+                console.log(i);
+            }
+            </pre></li>
+            <li>while loop: A while loop executes its statements as long as a specified condition evaluates to true.<br>
+                The condition test occurs before statement in the loop is executed.
+            <pre>
+    Syntax: while (condition) {
+                //statements;
+            }
+            
+    Ex.:    let j = 0; 
+            while (j < 5) {
+                console.log(j);
+                j++;
+            }
+            </pre></li>
+            <li>do...while loop: The do...while loop repeats until a specified condition evaluates to false.<br>
+                It is always executed at least once before the condition is checked.
+            <pre>
+    Syntax: do {
+                //statements;
+            } while (condition);
+
+    Ex.:    let x = 10;
+            do {
+                x--;
+                console.log(x);
+            } while (x > 50);
+            </pre></li>
+        </ul>
+
+        <h3>Part 2: Practocal Exercises</h3>
+        <p>1. Multiplication Table with For Loop</p>
+
+        <h3>Part 3: Reflection</h3>
+        <p>I learned that various types of loops offer different ways to execute statements in JavaScript.
+           Also, I've learned that one type of loop could be easier to serve than other loops depending on situation.
+           "4. Advanced Guessing Game with Do...While Loop" was interesting, but it was hard to figure out how to pop up prompts.  
+        </p>
+        <p>For loop and nested loop might be used to calculate scores of each learner.</p>
+
+        <script src="loops.js" async defer></script>
+        <script>
+            const min = 1;
+            const max = 100;
+            const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+
+            let attempts = 1;
+
+            do {
+                let guessNum = window.prompt ("Attempt " + attempts+ ": Guess a number between " + min + " and " + max + ".");
+                guessNum = Number(guessNum);
+
+                if (isNaN(guessNum)) {
+                    window.alert("Enter a valid number.");
+                } else if (guessNum < min || guessNum > max) {
+                    window.alert("Enter a valid number.");
+                } else {
+                    if (guessNum < randomNum) {
+                        window.alert("Too low! Try again!");
+                    } else if (guessNum > randomNum) {
+                        window.alert("Too high! Try again!");
+                    }else {
+                        window.alert("Your guess is correct! The random number was " + randomNum + ".");
+                        break;
+                    }
+                    attempts++;
+                }
+            } while (attempts <= 7) {} 
+        </script>
+    </body>
+</html>
