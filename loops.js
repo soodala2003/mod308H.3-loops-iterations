@@ -80,18 +80,24 @@ do {
 
 // 5. Nested Loop Pattern
 console.log("5. Nested Loop Pattern");
-let s = "  ";
-let star = "* ";
-let height = 6;
-let space_count = 0;
+let height = 5;
 
+// outer loop for rows
 for (let row = 1; row <= height; row++) {
-    for (let space = 0; space < row - space_count; space++) {
-        console.log(s.repeat(height - row) + star.repeat(space_count + 1));
+    let s = "";
+    
+    // inner loop1 for spaces
+    for (let space = height - row; space > 0; space--) {
+        s += "  ";
     }
-    space_count++;
+    // inner loop2 for stars
+    let pattern = "";
+    for (let star = 1; star <= row; star++) {
+        pattern += "* ";
+    }
+    console.log(s + pattern);
 }
-
+    
 // 6. Labeled Statement with Break
 console.log("6. Labeled Statement with Break");
 myLoop: for (let num1 = 1; num1 <= 10; num1++) {
