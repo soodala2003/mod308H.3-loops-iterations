@@ -48,6 +48,8 @@ while (x > 0) {
 
 // 4. Advanced Guessing Game with Do...While Loop
 // This part is in the loops.html.
+console.log("4. Advanced Guessing Game with Do...While Loop");
+console.log("This part is in the loops.html.");
 /* const min = 1;
 const max = 100;
 const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
